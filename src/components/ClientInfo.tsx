@@ -23,7 +23,7 @@ const ClientInfo = () => {
         <Typography>آدرس پستی </Typography>
         <Container>
           <Flex justifyContent="center">
-            <Botton>اضافه کردن آدرس پستی</Botton>
+            <Button>اضافه کردن آدرس پستی</Button>
           </Flex>
           <Divider />
           <Flex flexDirection="column" gap={1.6}>
@@ -92,7 +92,7 @@ const Container = styled(Flex)`
   padding: 1.6rem 10rem;
 `;
 
-const Botton = styled.button`
+const Button = styled.button`
   padding: 0.8rem 2.4rem;
   color: ${Colors.dark_slat};
   border: 1px solid #2d574c;
