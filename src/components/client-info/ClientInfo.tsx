@@ -1,8 +1,15 @@
 import { Flex, Input, Typography, Colors } from "primitives";
 import React from "react";
 import styled from "styled-components";
+import { useGetProduct, useGetMenuBar } from "./client-info.services";
+import offer1 from "assets/images/offer1.png";
+import Image from "next/image";
+import Sample from "@components/layout/TreeItem";
 
 const ClientInfo = () => {
+  // const { data, isLoading, isFetching } = useGetProduct();
+  //   background: linear-gradient(to top, #000, rgba(0, 0, 0, 0) bottom/100% 60% no-repeat;
+
   const array: number[] = [1, 2, 3];
   return (
     <Root>
@@ -13,10 +20,10 @@ const ClientInfo = () => {
             <Typography>شماره تلفن همراه</Typography>
             <Typography>09121361559</Typography>
           </Flex>
-          <Flex gap={1.6}>
-            <Input labelVariant="body" width="48%" label="نام" placeholder="علی" />
-            <Input labelVariant="body" width="48%" label="نام و نام خانوادگی" placeholder="حسنی" />
-          </Flex>
+          <GridLayout>
+            <Input labelVariant="body" label="نام" placeholder="علی" />
+            <Input labelVariant="body" label="نام و نام خانوادگی" placeholder="حسنی" />
+          </GridLayout>
         </Container>
       </Box>
       <Box>
@@ -45,10 +52,10 @@ const ClientInfo = () => {
           <Typography>
             در صورتی که تمابل دارید فاکتور به نام شخص دیگری ثبت شود مضخصات ایشان را وارد کنید
           </Typography>
-          <Flex gap={1.6}>
-            <Input labelVariant="body" width="48%" label="نام" placeholder="علی" />
-            <Input labelVariant="body" width="48%" label="نام و نام خانوادگی" placeholder="حسنی" />
-          </Flex>
+          <GridLayout>
+            <Input labelVariant="body" label="نام" placeholder="علی" />
+            <Input labelVariant="body" label="نام و نام خانوادگی" placeholder="حسنی" />
+          </GridLayout>
           <Flex flexDirection="column" gap={1} xs={[{ marginTop: "2.4rem" }]}>
             <label style={{ paddingRight: "1rem" }} htmlFor="textarea">
               پیام
@@ -57,11 +64,27 @@ const ClientInfo = () => {
           </Flex>
         </Container>
       </Box>
+      <button
+        onClick={() => {
+          <Sample />;
+        }}
+      >
+        test
+      </button>
     </Root>
   );
 };
 
 export default ClientInfo;
+
+const ItemGrid = styled.div`
+  width: 200px;
+  height: 200px;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+`;
 
 const Root = styled(Flex)`
   display: flex;
@@ -90,6 +113,12 @@ const Container = styled(Flex)`
   flex-direction: column;
   gap: 3.2rem 0;
   padding: 1.6rem 10rem;
+`;
+
+const GridLayout = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
 `;
 
 const Button = styled.button`

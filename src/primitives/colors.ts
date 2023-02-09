@@ -5,6 +5,8 @@ export const Colors = {
   dark_slat: "#2D574C",
   soft_yellow: "#E9B380",
   pop_star: "#FFD0D0",
+  gray: "#818181",
+  black: "#232323",
 };
 
 export const TextColors = {
